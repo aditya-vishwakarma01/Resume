@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin-left: 100px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 9px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 50px;
+        }
+        
+        .form-group label {
+            margin-top: 60px;
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-left:100px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right:500px;
+            margin-left:100px;
+        }
+        
+        .form-group textarea {
+            height: 40px;
+        }
+        
+        
+        .form-group button {
+            display: block;
+            width: 50% auto;
+            padding: 10px;
+            border: none;
+            background-color: blue;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            align-items: center;
+            margin-left:100px;
+        }
+        
+        
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <img src="Logo.jpeg" alt="logo" class="logo" style="height: 50px; width: 55px;margin-top: 15px;border-radius: 50%;">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+   
+        <h2>Contact Me</h2>
+    <div class="container">
+       
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+    </div> </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+            var form = event.target;
+            var name = form.elements['name'].value;
+            var email = form.elements['email'].value;
+            var message = form.elements['message'].value;
+
+            var mailtoLink = 'mailto:riyasonar1404@gmail.com' +
+                '?subject=' + encodeURIComponent('Contact Form Submission') +
+                '&body=' + encodeURIComponent('Name: ' + name + '\n\nEmail: ' + email + '\n\nMessage: ' + message);
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
+
+
+
